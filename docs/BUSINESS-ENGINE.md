@@ -25,6 +25,18 @@ Positioning → channel draft (blog/social/email/landing/PR/case study) → clai
 Always: one audience, one key message, one CTA, the canonical CTA class. Offer headline
 options. Flag anything needing legal review.
 
+**SEO tooling (adopted R4):** install the `claude-seo` skill pack
+(github.com/AgriciDaniel/claude-seo — MIT; technical SEO, E-E-A-T, schema, GEO/AEO,
+local SEO, reporting) alongside this OS. Route through `marketing-agent`; claims still
+audit against `docs/WEBSITE.md`. **Priority use: local SEO + maps intelligence for
+merchant acquisition.** Works without paid APIs; optional providers are a deliberate call.
+
+**Design tooling (adopted R5):** install `hallmark` (github.com/Nutlope/hallmark —
+anti-AI-slop design skill) for landing pages and marketing experiments only.
+**Brand fence (hard rule):** the Brand Kit, locked palette, and canonical CTA class
+OUTRANK hallmark — it styles new marketing surfaces, never restyles product UI.
+Optional: use its theme-extraction ("Study") to encode the Brand Kit as a portable design.md.
+
 ## Sales (`sales-agent`)
 Research (sources cited) → qualify vs ICP → draft outreach (one value prop + one CTA) /
 discovery agenda / proposal (scope + value + pricing within guardrails) → call summaries
