@@ -1,6 +1,6 @@
 # cstack-mcp-server
 
-An MCP server that serves the **claude-token-efficient-setup** operating system — the agent
+An MCP server that serves the **claude-agent-os** operating system — the agent
 swarm, doctrine docs, the operating law, and a one-shot install bundle — as MCP tools. Point
 any MCP client at it and your AI can read the whole setup, or pull it into a project, without
 copying files by hand.
@@ -32,7 +32,7 @@ node dist/index.js     # speaks MCP over stdio
 ```
 
 By default the server resolves the repo root as the parent of `mcp/`. Override with
-`CSTACK_ROOT=/path/to/claude-token-efficient-setup`.
+`CSTACK_ROOT=/path/to/claude-agent-os`.
 
 ## Connect it (Claude Code / Cowork)
 
@@ -43,8 +43,8 @@ Add to your MCP client config (e.g. `.mcp.json` or `claude_desktop_config.json`)
   "mcpServers": {
     "cstack": {
       "command": "node",
-      "args": ["/absolute/path/to/claude-token-efficient-setup/mcp/dist/index.js"],
-      "env": { "CSTACK_ROOT": "/absolute/path/to/claude-token-efficient-setup" }
+      "args": ["/absolute/path/to/claude-agent-os/mcp/dist/index.js"],
+      "env": { "CSTACK_ROOT": "/absolute/path/to/claude-agent-os" }
     }
   }
 }
