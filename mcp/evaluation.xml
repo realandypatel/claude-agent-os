@@ -1,0 +1,42 @@
+<evaluation>
+  <qa_pair>
+    <question>Using the cstack tools, how many distinct agents are defined in the operating system's swarm?</question>
+    <answer>23</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What group does the agent named "investigate" belong to?</question>
+    <answer>debug</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>How many Iron Laws are listed in the operating law (AGENTS.md)?</question>
+    <answer>8</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Which single file is the website-keeper agent permitted to edit?</question>
+    <answer>docs/WEBSITE.md</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>In the responsive doctrine, at what pixel width is the chrome mobile/desktop boundary set (the value used by the "dt" breakpoint)?</question>
+    <answer>601</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Which agent is responsible for picking a third-party API from a curated index before any integration code is written?</question>
+    <answer>api-finder</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>The build-agent runs a four-stage pre-deploy gate in order (typecheck, lint, test, build). What is the third stage?</question>
+    <answer>test</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Which business-engine agent is dedicated to follow-up sequences and must never auto-send?</question>
+    <answer>sales-followup-agent</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>According to Iron Law #1 (no fix without root cause), after how many failed hypotheses should the investigator stop and escalate?</question>
+    <answer>3</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What is the maximum recommended line count for AGENTS.md stated in the operating law?</question>
+    <answer>300</answer>
+  </qa_pair>
+</evaluation>
