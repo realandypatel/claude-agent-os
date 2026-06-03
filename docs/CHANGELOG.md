@@ -2,6 +2,36 @@
 
 One section per shipped round (R-number). The `memory-agent` appends these. Newest on top.
 
+## R6–R18 (2026-06-03) — capability + proof + resilience wave (OS_VERSION 1.1.0)
+- **R6 spec-kit · R7 beads · R8 playwright-mcp · R11 chrome-devtools-mcp:** adopted via
+  `docs/ADOPTIONS.md` registry (pinned-SHA policy); AGENTS.md working rules updated
+  (spec-first, beads work memory, browser-MCP scoping fence); architect-agent owns
+  constitution review; qa-agent wired to playwright; performance-agent + investigate
+  wired to devtools traces/runtime evidence.
+- **R9 HyperFrames (revised from Remotion):** video-producer composes via HyperFrames
+  (real captures embedded; Brand Kit CSS; deterministic); auditor adds determinism
+  re-render check + `docs/ASSET-LICENSES.md` ledger enforcement. Fallbacks: Remotion→Revideo.
+- **R10 pocock skills:** cherry-picked caveman / grill-me / handoff (registry entry).
+- **R12 OS evals:** `evals/` suite (4 golden cases: investigate, security, code-review,
+  build gate) + `/eval` command — mandatory before any `.claude/`/AGENTS.md change;
+  `docs/METRICS.jsonl` (memory-agent appends per round; pm-agent quantitative); GTM
+  feedback loop added to BUSINESS-ENGINE (campaign metrics → INSTINCTS).
+- **R13 law linter:** `scripts/lint-os.sh` in CI (AGENTS ≤300, agent sections, INSTINCTS
+  scar+evidence, eval structure, VERSION semver); model routing (opus: architect,
+  investigate; haiku: build, pm, api-finder).
+- **R14 propagation:** `VERSION` 1.1.0 + OS_VERSION stamp + `setup.sh --update`
+  (syncs OS-owned files; never touches project FILLs; records .claude/os-version).
+- **R15 supply chain:** SECURITY.md — skill vetting before activation (security-agent
+  hard rule, pinned SHAs in ADOPTIONS), lockfiles + `npm audit` in CI, pin-Actions-by-SHA
+  policy.
+- **R16 resilience:** `docs/RESILIENCE.md` — backups + quarterly restore drills, RPO/RTO,
+  secrets inventory + rotation calendar, break-glass, spend kill-switch.
+- **R17 agent containment:** scoped agent credentials (blast radius), `/freeze` command,
+  agent incident runbook → postmortems feed INSTINCTS.
+- **R18 data lifecycle:** `docs/DATA-LIFECYCLE.md` — PII map, retention (scraped-lead
+  purge), CCPA deletion-request runbook, suppression-forever.
+- **Design freeze on record:** no new pillars until a 90-day landscape re-review.
+
 ## R5 (2026-06-03) — hallmark adoption (design, fenced)
 - Adopted Nutlope/hallmark for landing pages + marketing experiments. Hard brand fence
   documented in BUSINESS-ENGINE: Brand Kit / locked palette / canonical CTA outrank it;

@@ -53,6 +53,13 @@ NDA/contract triage (GREEN / YELLOW / RED) with cited clause flags → complianc
 with required phrases. Both website AND external config must agree. Escalate YELLOW/RED to a
 human lawyer; never sign or accept terms.
 
+## GTM feedback loop (R12 fold) — the engine learns to sell
+Outcomes are data, same as bugs: per sequence/variant, log reply / bounce / complaint /
+conversion rates (weekly, by `pm-agent` from the CRM webhook events). Winning and losing
+patterns get appended to `docs/INSTINCTS.md` as candidates (e.g. "subject lines with
+{{business}} outperform generic 2:1 — evidence: variant A vs B, week N") and promoted
+into this playbook with human GO. No fabricated numbers — the metrics ARE the evidence.
+
 ## The GTM loop
 `marketing-agent` builds demand → `sales-agent` researches + opens → `sales-followup-agent`
 keeps every thread alive → `legal-agent` clears contracts/compliance → the human approves
