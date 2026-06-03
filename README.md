@@ -33,7 +33,14 @@ re-read every turn.
 - **Two-tier memory** — committed project memory + cross-project user memory, kept honest
   by a `memory-agent`.
 - **A pre-deploy gate** — typecheck → lint → test → build, stop on first failure.
-- **Doctrine docs** — security, AI stack, design/brand, role modes, business engine.
+- **Doctrine regression evals** (`evals/` + `/eval`) — golden tasks that prove the agents
+  still behave when prompts change, plus a CI **law linter** that keeps the structure honest.
+- **Versioned propagation** — `setup.sh --update` syncs OS upgrades into every installed
+  project without touching your project-specific fills.
+- **Enterprise resilience** — backups/restore drills, secrets lifecycle, agent
+  blast-radius credentials, `/freeze` incident containment, PII data lifecycle (CCPA).
+- **Doctrine docs** — security (incl. skill supply-chain vetting), AI stack, design/brand,
+  role modes, business engine, external-tool registry (`docs/ADOPTIONS.md`).
 
 ## The agent swarm
 

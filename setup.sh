@@ -16,9 +16,11 @@ set -euo pipefail
 # --- resolve source (this repo) and target (cwd) -------------------------------------
 SRC=""
 TARGET="$(pwd)"
+UPDATE=false
 while [ $# -gt 0 ]; do case "$1" in
   --from) SRC="$2"; shift 2;;
   --target) TARGET="$2"; shift 2;;
+  --update) UPDATE=true; shift;;
   -h|--help) grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0;;
   *) echo "unknown arg: $1"; exit 1;;
 esac; done
@@ -47,13 +49,39 @@ copy() { # copy <relpath>
   echo "  + $rel"
 }
 
-copy ".claude"
-copy "AGENTS.md"
-copy "CLAUDE.md"
-copy "docs"
-copy "templates"
+if [ "$UPDATE" = true ]; then
+  # --- UPDATE MODE (R14): sync OS-owned files only; NEVER touch project-filled files ---
+  # OS-owned: agents, hooks, commands, skills, templates, evals, scripts, core doctrine.
+  # Project-owned (untouched): AGENTS.md, CLAUDE.md, settings.json, WEBSITE/CHANGELOG/
+  # INSTINCTS/METRICS/ADOPTIONS/RESILIENCE/DATA-LIFECYCLE/ASSET-LICENSES, BUSINESS-ENGINE.
+  echo "UPDATE mode: syncing OS-owned files (project FILLs untouched)"
+  for rel in .claude/agents .claude/hooks .claude/commands templates evals scripts \
+             docs/FOUNDATION.md docs/ROLE-MODES.md setup.sh; do
+    if [ -e "$SRC/$rel" ]; then
+      mkdir -p "$(dirname "$TARGET/$rel")"
+      rm -rf "$TARGET/${rel:?}" 2>/dev/null || true
+      cp -R "$SRC/$rel" "$TARGET/$rel"
+      echo "  ~ synced $rel"
+    fi
+  done
+  mkdir -p "$TARGET/.claude"
+  cp "$SRC/VERSION" "$TARGET/.claude/os-version" 2>/dev/null || true
+  echo "  installed OS version: $(cat "$TARGET/.claude/os-version" 2>/dev/null || echo '?')"
+  echo "  → review docs/CHANGELOG.md in the source repo for migration notes."
+else
+  copy ".claude"
+  copy "AGENTS.md"
+  copy "CLAUDE.md"
+  copy "docs"
+  copy "templates"
+  copy "evals"
+  copy "scripts"
+  mkdir -p "$TARGET/.claude"
+  cp "$SRC/VERSION" "$TARGET/.claude/os-version" 2>/dev/null || true
+fi
 
 chmod +x "$TARGET/.claude/hooks/check-destructive.sh" 2>/dev/null || true
+chmod +x "$TARGET/scripts/lint-os.sh" 2>/dev/null || true
 
 # --- self-test the hook ---------------------------------------------------------------
 echo

@@ -6,6 +6,7 @@
 >
 > This is a reusable template. Sections marked **〔FILL〕** are per-project; everything
 > else is the portable law. Full rationale lives in `docs/FOUNDATION.md`.
+> **OS_VERSION: 1.1.0** (see `/VERSION`; upgrade installs with `setup.sh --update`).
 
 ---
 
@@ -74,6 +75,14 @@
   default branch. End commits with a `Co-Authored-By:` trailer for the AI author.
 - Commit/push only when the human asks. Branch first if on the default branch.
 - Never echo, print, or commit secrets. Use env-var *names* in docs, never values.
+- **Spec-first (when spec-kit installed):** `/specify`→`/plan`→`/tasks` map onto
+  UNDERSTAND→PLAN; `architect-agent` owns the constitution review; AGENTS.md wins conflicts.
+- **Work memory (when beads installed):** rounds/sub-tasks tracked as bead issues (`bd`);
+  handoffs reference bead ids.
+- **Browser MCP fence:** playwright-mcp for QA/E2E rounds; chrome-devtools-mcp for
+  debug/perf rounds; never both by default. Registry + pinned SHAs: `docs/ADOPTIONS.md`.
+- **Run `/eval` before committing any change to `.claude/` or this file**; CI runs the
+  law linter (`scripts/lint-os.sh`). Emergencies: `/freeze` (see `docs/RESILIENCE.md` §4).
 
 ---
 
@@ -136,6 +145,10 @@ RLS on every table; the fix for a leak is a correct policy, never disabling RLS.
 webhook signatures BEFORE processing. Rate-limit unauthenticated/AI endpoints. Never
 expose the service-role/admin key to the browser. Never surface raw DB errors to users.
 Audit-event row on every state change. Full doctrine: `docs/SECURITY.md`.
+**Resilience:** backups + quarterly restore drills, secrets lifecycle, agent blast-radius
+credentials, agent incident runbook → `docs/RESILIENCE.md`. **Data/PII:** map, retention,
+CCPA deletion runbook → `docs/DATA-LIFECYCLE.md`. **Media assets:** license ledger →
+`docs/ASSET-LICENSES.md` (auditor fails unlisted assets).
 
 ---
 
