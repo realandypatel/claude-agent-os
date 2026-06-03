@@ -2,6 +2,12 @@
 
 One section per shipped round (R-number). The `memory-agent` appends these. Newest on top.
 
+## R2 (2026-06-02) — Publish hardening
+- Published to GitHub as `realandypatel/claude-agent-os` (kept `claude-token-efficient-setup` as the OS tagline).
+- Renamed repo references in README, setup.sh, and mcp/README to the new repo URL.
+- Added `.github/workflows/ci.yml`: builds the MCP server (install → tsc → verify dist) and
+  smoke-tests the destructive-command hook (flags force-push, allows safe artifact deletes) on every push/PR.
+
 ## R1 (2026-06-02) — MCP server + installer
 - Added `setup.sh` one-command installer (copies the OS into any repo, self-tests the hook).
 - Added `mcp/` — `cstack-mcp-server` (TypeScript, stdio): serves agents/docs/law + install
