@@ -1,0 +1,42 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Per-developer Claude permissions — never commit
+.claude/settings.local.json
+
+# Scratch / handoff docs (per Iron Law: keep out of commits)
+docs/HANDOFF_*.md
+*.SCRATCH.md
+scratch/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.next/
+.turbo/
+out/
+coverage/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Env & secrets — NEVER commit
+.env
+.env.*
+!.env.example
+*.local
+secrets/
+
+# Logs
+*.log
