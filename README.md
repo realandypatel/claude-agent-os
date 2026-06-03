@@ -1,4 +1,4 @@
-# claude-token-efficient-setup
+# claude-agent-os
 
 **A portable, token-efficient operating system for building world-class software with Claude Code.**
 
@@ -52,7 +52,7 @@ re-read every turn.
 **One-liner** (from inside the target repo) — clones, installs, self-tests the hook, cleans up:
 
 ```bash
-git clone https://github.com/realandypatel/claude-token-efficient-setup.git /tmp/_cstack \
+git clone https://github.com/realandypatel/claude-agent-os.git /tmp/_cstack \
   && bash /tmp/_cstack/setup.sh --from /tmp/_cstack && rm -rf /tmp/_cstack
 ```
 
@@ -63,7 +63,7 @@ self-test, and prints the FILL checklist.
 **Manual** (if you prefer):
 
 ```bash
-git clone https://github.com/realandypatel/claude-token-efficient-setup.git _cstack
+git clone https://github.com/realandypatel/claude-agent-os.git _cstack
 cp -r _cstack/.claude . && cp _cstack/AGENTS.md _cstack/CLAUDE.md . && cp -r _cstack/docs ./docs
 chmod +x .claude/hooks/check-destructive.sh && rm -rf _cstack
 ```

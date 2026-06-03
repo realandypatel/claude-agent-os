@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# setup.sh — install the claude-token-efficient-setup operating system into a project.
+# setup.sh — install the claude-agent-os operating system into a project.
 #
 # Usage:
 #   # from inside a target repo:
-#   bash /path/to/claude-token-efficient-setup/setup.sh
+#   bash /path/to/claude-agent-os/setup.sh
 #
 #   # or one-liner (clones, installs into the current dir, cleans up):
-#   git clone https://github.com/realandypatel/claude-token-efficient-setup.git /tmp/_cstack \
+#   git clone https://github.com/realandypatel/claude-agent-os.git /tmp/_cstack \
 #     && bash /tmp/_cstack/setup.sh --from /tmp/_cstack && rm -rf /tmp/_cstack
 #
 # It copies .claude/ + AGENTS.md + CLAUDE.md + docs/ + templates/ into the target,
@@ -29,7 +29,7 @@ if [ "$SRC" = "$TARGET" ]; then
   echo "or pass --target <dir>."; exit 1
 fi
 
-echo "Installing claude-token-efficient-setup"
+echo "Installing claude-agent-os"
 echo "  from:   $SRC"
 echo "  into:   $TARGET"
 echo
