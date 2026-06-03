@@ -1,0 +1,52 @@
+name: CI
+
+# Build gate for the repo: builds the cstack MCP server and smoke-tests the
+# destructive-command hook on every push and PR to main.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  mcp-build:
+    name: Build MCP server
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mcp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Type-check + build
+        run: npm run build
+
+      - name: Verify build output
+        run: test -f dist/index.js
+
+  hook-smoke-test:
+    name: Destructive-command hook
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hook flags a force-push
+        run: |
+          out=$(printf '{"tool_input":{"command":"git push --force"}}' \
+            | bash .claude/hooks/check-destructive.sh)
+          echo "$out"
+          echo "$out" | grep -q '"ask"' || { echo "FAIL: hook did not flag force-push"; exit 1; }
+
+      - name: Hook allows a safe build-artifact delete
+        run: |
+          out=$(printf '{"tool_input":{"command":"rm -rf node_modules"}}' \
+            | bash .claude/hooks/check-destructive.sh)
+          echo "$out"
+          [ "$out" = "{}" ] || { echo "FAIL: hook should allow rm -rf node_modules"; exit 1; }
