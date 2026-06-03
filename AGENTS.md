@@ -111,7 +111,9 @@ any integration).
 typecheck → lint → test → build, in order, stop on first failure).
 
 **Meta:** `pm-agent` (detect circling, build health, next actions) · `memory-agent` (keep
-AGENTS.md/CHANGELOG honest via surgical edits) · `website-keeper` (marketing-site truth).
+AGENTS.md/CHANGELOG honest via surgical edits; auto-append candidate instincts to
+`docs/INSTINCTS.md` — promotion into law requires human GO) · `website-keeper`
+(marketing-site truth).
 
 **Business engine:** `marketing-agent` (positioning, content, SEO, campaigns) ·
 `sales-agent` (research, outreach, proposals) · `sales-followup-agent` (sequences, CRM
