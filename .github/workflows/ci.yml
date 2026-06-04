@@ -25,11 +25,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Audit dependencies (R15 supply chain)
+        run: npm audit --audit-level=high
+
       - name: Type-check + build
         run: npm run build
 
       - name: Verify build output
         run: test -f dist/index.js
+
+  law-linter:
+    name: Law linter (R13)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint OS structure
+        run: bash scripts/lint-os.sh
 
   hook-smoke-test:
     name: Destructive-command hook
