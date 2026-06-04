@@ -16,6 +16,7 @@
 | **claude-seo** (AgriciDaniel/claude-seo) | SEO skill pack; priority: local SEO + maps for merchant acquisition | Routed via `marketing-agent`; claims audit against WEBSITE.md | MIT | 〔FILL〕 |
 | **hallmark** (Nutlope/hallmark) | Anti-slop design for landing pages/marketing only | **Brand fence:** Brand Kit / palette / canonical CTA OUTRANK it; never restyles product UI | check at install | 〔FILL〕 |
 | **OpenCut** (OpenCut-app) | Free human video editor for touch-ups | Tool only — no integration | MIT | n/a |
+| **OpenScreen** (siddharthvaddem/openscreen) | Cinematic screen capture for HUMAN clips/reels: auto-zoom cursor follow, click highlights, **blur for sensitive regions**, webcam PiP, 9:16/MP4/GIF export | Tool only — no integration. **Rule:** produced brand videos → raw capture + HyperFrames (deterministic, auditable); quick human clips/reels → OpenScreen with blur ON; any added music → ASSET-LICENSES row | verify at install | n/a |
 
 **Browser-MCP scoping fence (token doctrine):** playwright-mcp loads for QA/E2E rounds;
 chrome-devtools-mcp loads for debug/perf rounds; **never both by default.**

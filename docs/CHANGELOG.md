@@ -2,6 +2,16 @@
 
 One section per shipped round (R-number). The `memory-agent` appends these. Newest on top.
 
+## R19 (2026-06-03) — media capture tool + memory front-runner
+- Adopted **OpenScreen** (siddharthvaddem/openscreen) into `docs/ADOPTIONS.md` as a
+  TOOL (no round): cinematic screen capture for human clips/reels — auto-zoom, click
+  highlights, blur for sensitive regions, 9:16 export. Rule: brand videos → HyperFrames
+  (deterministic/auditable); human reels → OpenScreen with blur ON; music → ASSET-LICENSES.
+- Evaluation notes on record (no adoption): hivemind, LongCat-Video → SKIP (not our
+  domain / generative-video gates). **memanto** (moorcheh-ai) → named front-runner for
+  the deferred memory trial (recall-only, when beads+handoff reveal episodic gaps).
+- Design remains frozen; this is registry maintenance, not a new pillar.
+
 ## R6–R18 (2026-06-03) — capability + proof + resilience wave (OS_VERSION 1.1.0)
 - **R6 spec-kit · R7 beads · R8 playwright-mcp · R11 chrome-devtools-mcp:** adopted via
   `docs/ADOPTIONS.md` registry (pinned-SHA policy); AGENTS.md working rules updated
