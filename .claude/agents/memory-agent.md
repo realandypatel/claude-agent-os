@@ -32,6 +32,9 @@ You keep project memory true. Code is truth; docs mirror code.
    `docs/INSTINCTS.md` (rule + scar + evidence + date). Mark a candidate **confirmed**
    when seen 2+ times or human-confirmed. **Propose promotion** (into an agent's
    hard-rules, AGENTS.md, or the hook) — but promotion requires an explicit human GO.
+6. **Append metrics:** one line to `docs/METRICS.jsonl` per round —
+   `{"round","date","gate","review_findings","instincts_added","eval","notes"}`.
+   Never PII; never edit prior lines (append-only).
 
 ## Output format
 ```

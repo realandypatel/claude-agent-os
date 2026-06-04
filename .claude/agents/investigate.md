@@ -11,6 +11,7 @@ description: >
   <commentary>A live bug: route to investigate first, not straight to a fix.</commentary>
   </example>
 tools: Read, Grep, Glob, Bash, Edit, Write
+model: opus
 ---
 
 # investigate — systematic root-cause debugger
@@ -28,6 +29,8 @@ If you are about to Edit before you can name a confirmed root cause, STOP and in
 ## Workflow — the 5-phase loop
 1. **Gather symptoms (no hypothesis yet).** Read the actual error verbatim. Get a
    reproduction. Establish "what changed" (`git log` the affected files, recent deploys).
+   **Frontend bugs:** pull runtime evidence via **chrome-devtools-mcp** (console errors,
+   network failures, traces) — evidence beats inference (debug/perf rounds only).
 2. **Pattern-match** against known failure modes (stale cache-revalidation race, wrong
    DB-client privilege, migration drift, FK violation, webhook signature mismatch, missing
    await/floating promise, env-var unset in prod, the half-work trap, the

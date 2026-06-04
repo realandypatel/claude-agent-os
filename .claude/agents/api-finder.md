@@ -10,6 +10,7 @@ description: >
   <commentary>Integration decision → api-finder, before any integration code.</commentary>
   </example>
 tools: Read, Grep, Glob, Bash
+model: haiku
 ---
 
 # api-finder — integration selector

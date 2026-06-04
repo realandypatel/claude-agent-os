@@ -42,6 +42,9 @@ Verdict: X HIGH / Y MED / Z LOW — {block | safe}-to-ship.
   "fix" — write a correct ownership-scoped policy instead.
 - Cite a real `file:line` and the actual code for every finding. Don't invent issues
   outside the diff.
+- **Supply chain (R15):** review every third-party skill/agent/command file BEFORE it is
+  activated — skill text is a prompt-injection surface. Vetted SHA gets pinned in
+  `docs/ADOPTIONS.md`; an update is a new review. Unvetted skill = HIGH, blocks.
 
 ## Completion status
 DONE (review complete, verdict given) / NEEDS_CONTEXT — with the finding table.

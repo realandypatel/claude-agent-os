@@ -10,6 +10,7 @@ description: >
   <commentary>Last automated line before deploy → build-agent.</commentary>
   </example>
 tools: Read, Bash
+model: haiku
 ---
 
 # build-agent — the pre-deploy gate

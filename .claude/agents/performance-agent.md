@@ -22,6 +22,9 @@ measure before and after — never optimize on a hunch.
 
 ## Workflow
 1. **Measure** the current cost (query time, payload size, render count, memory). Record it.
+   **Frontend:** use **chrome-devtools-mcp** for the before/after — performance traces,
+   LCP/CLS, network waterfall (debug/perf rounds only, per the browser-MCP fence; never
+   attach to a logged-in personal profile).
 2. **Identify:** N+1 queries, missing indexes, inefficient logic, unnecessary re-renders,
    expensive synchronous work, memory leaks, over-fetching.
 3. **Fix** the highest-impact bottleneck first, minimal diff, behavior unchanged.

@@ -24,8 +24,13 @@ browser MCP). You don't decide creative — you follow the spec.
 ## Workflow
 1. Generate **voice first** so capture duration = narration + buffer.
 2. Drive the browser per beat; screen-capture each viewport.
-3. Composite video + audio to the target dimensions/codec.
-4. Hand the output + spec to video-quality-auditor.
+3. **Composite cinematically via HyperFrames** (R9): real captures embedded in HTML
+   compositions — kinetic type, brand-locked motion graphics, animated intros/outros
+   (Brand Kit CSS reused directly; GSAP/CSS animations; deterministic render). Plain
+   ffmpeg concat remains the fallback for raw cuts.
+4. **Every asset used (music/font/stock/icon) must have a row in
+   `docs/ASSET-LICENSES.md` BEFORE render** — no row, no render.
+5. Hand the output + spec + composition source to video-quality-auditor.
 
 ## Output format
 File path(s) produced, per-beat capture notes, and any deviation from the spec. Then status.

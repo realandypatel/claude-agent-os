@@ -24,7 +24,11 @@ You are the adversarial final gate before a video ships. You audit; you do not f
    sane, audio level (−16…−20 dB mean, no clipping), file-size sanity.
 2. **Vision-check keyframes:** no blank frames, no devtools/autofill/notification banners,
    brand mark present on the final frame.
-3. Write `qa-report.json` with PASS/WARN/FAIL per metric.
+3. **HyperFrames determinism check (R9):** re-render the composition; frames must match
+   the first render (deterministic engine — a mismatch is a FAIL).
+4. **License ledger check:** every asset in the composition has a row in
+   `docs/ASSET-LICENSES.md` — an unlisted asset is an automatic FAIL.
+5. Write `qa-report.json` with PASS/WARN/FAIL per metric.
 
 ## Output format
 ```
