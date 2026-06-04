@@ -2,6 +2,18 @@
 
 One section per shipped round (R-number). The `memory-agent` appends these. Newest on top.
 
+## R20 (2026-06-04) — post-compact recall hook (OS_VERSION 1.2.0)
+- **Root cause fixed:** standing user instructions silently lost when long sessions
+  compact ("it forgot my command"). Not a memory-DB problem — a re-grounding problem.
+- New `.claude/hooks/post-compact-recall.sh` wired as a **SessionStart(compact)** hook:
+  after every compaction it injects a short recall block — re-read AGENTS.md, resume from
+  beads/handoff, ask (don't guess) for lost session-specific instructions. Output kept
+  minimal per token doctrine; appends a no-PII compaction breadcrumb to METRICS.jsonl.
+- AGENTS.md working rule added: compaction is lossy; any instruction repeated twice
+  moves into AGENTS.md. VERSION → 1.2.0; propagates via `setup.sh --update`.
+- Full-system audit on record: agents/hooks/commands/skills sized correctly for
+  big-software scope; pricing = deliberate non-agent; design freeze otherwise holds.
+
 ## R19 (2026-06-03) — media capture tool + memory front-runner
 - Adopted **OpenScreen** (siddharthvaddem/openscreen) into `docs/ADOPTIONS.md` as a
   TOOL (no round): cinematic screen capture for human clips/reels — auto-zoom, click
