@@ -49,6 +49,15 @@ Scar:      Typing a >50-char commit summary inserts a ProTip line that shifts th
 Evidence:  Root-files commit attempt, 2026-06-02 (click landed above button; form still open).
 Date:      2026-06-02
 
+### I-5 — Shell glob loops must use `shopt -s nullglob` or they false-fail in CI
+Status:    confirmed
+Scar:      The R13 law-linter ran on an intermediate commit where `evals/cases/*.md`
+           matched no files; bash passed the literal pattern to grep → "No such file or
+           directory" → exit 1. Passed locally (files present), failed in CI (timing).
+           Classic glob-vs-empty false alarm. Fix: `shopt -s nullglob` at script top.
+Evidence:  CI run #12 (commit f88c57b), 2026-06-03; green after the nullglob fix.
+Date:      2026-06-03
+
 ### I-4 — Adopt skills that slot INTO the OS; reject systems that replace parts of it
 Status:    candidate
 Scar:      8-repo evaluation batch: every adoption-worthy repo (claude-seo, hallmark) was
