@@ -6,7 +6,7 @@
 >
 > This is a reusable template. Sections marked **〔FILL〕** are per-project; everything
 > else is the portable law. Full rationale lives in `docs/FOUNDATION.md`.
-> **OS_VERSION: 1.1.0** (see `/VERSION`; upgrade installs with `setup.sh --update`).
+> **OS_VERSION: 1.2.0** (see `/VERSION`; upgrade installs with `setup.sh --update`).
 
 ---
 
@@ -78,7 +78,9 @@
 - **Spec-first (when spec-kit installed):** `/specify`→`/plan`→`/tasks` map onto
   UNDERSTAND→PLAN; `architect-agent` owns the constitution review; AGENTS.md wins conflicts.
 - **Work memory (when beads installed):** rounds/sub-tasks tracked as bead issues (`bd`);
-  handoffs reference bead ids.
+  handoffs reference bead ids. **Compaction is lossy:** the `post-compact-recall` hook
+  (R20) re-grounds every compacted session — standing commands live in THIS file, never
+  only in chat; if you repeat an instruction twice, it moves here.
 - **Browser MCP fence:** playwright-mcp for QA/E2E rounds; chrome-devtools-mcp for
   debug/perf rounds; never both by default. Registry + pinned SHAs: `docs/ADOPTIONS.md`.
 - **Run `/eval` before committing any change to `.claude/` or this file**; CI runs the
