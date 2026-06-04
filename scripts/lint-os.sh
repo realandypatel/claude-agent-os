@@ -2,6 +2,7 @@
 # Law linter (R13): mechanical enforcement that the OS structure can't silently rot.
 # Run in CI on every push; also runnable locally: bash scripts/lint-os.sh
 set -uo pipefail
+shopt -s nullglob   # empty globs expand to nothing, never to a literal pattern (CI-safe)
 cd "$(dirname "$0")/.."
 FAIL=0
 err() { echo "LINT FAIL: $1"; FAIL=1; }
